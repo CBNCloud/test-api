@@ -33,6 +33,5 @@ matrix:
 before_script:
   - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS oracle;" -uroot; fi
   - cp .env.example .env
-  - mysql -e 'create database oracle;'
   - composer self-update
   - composer install --no-interaction
