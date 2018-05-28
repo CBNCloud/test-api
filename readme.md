@@ -1,9 +1,6 @@
 ## Introduction
 This sample demonstrates Rest Api Lumen Laravel.
 
-
-[![Build Status](https://travis-ci.org/CBNCloud/test-api.svg?branch=master)](https://travis-ci.org/CBNCloud/test-api)
-
 ## Table of contents
 
 <!--ts-->
