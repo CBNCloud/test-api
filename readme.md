@@ -47,7 +47,7 @@ DB_PASSWORD=secret
 ## generate keys
 ```bash
 # generate keys or APP_KEY
- php artisan make:generate
+ php artisan key:generate
 ```
 
 ## login
