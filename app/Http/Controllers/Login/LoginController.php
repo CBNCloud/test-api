@@ -40,18 +40,20 @@ class LoginController extends Controller
             
             return response($res);
         } else {
+            // checking your password 
             if ($password == $login->member_password) {
                 $api_token    = sha1(time());
                 $create_token = $this->model->where('member_username', $login->member_username)->update(['api_token' => $api_token]);
                 if ($create_token) {
                     $res['success']   = true;
                     $res['api_token'] = $api_token;
-                    $res['message']   = $login;
+                    $res['message']   = 'Your login Successfully';
+                    $res['result']    = $login;
                     
                     return response($res);
                 }
             } else {
-                $res['success'] = true;
+                $res['success'] = false;
                 $res['message'] = 'You email or password incorrect!';
                 
                 return response($res);
