@@ -30,6 +30,7 @@ class BarangController extends Controller
         $data = $this->model->all();
         
         $res['success'] = 'success';
+        $res['total']   = $data->count();
         $res['message'] = $data;
         
         return response($res);
