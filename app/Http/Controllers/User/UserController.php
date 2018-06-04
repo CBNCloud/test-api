@@ -29,7 +29,7 @@ class UserController extends Controller
      */
     public function get_user(Request $request, $id)
     {
-        $user = $this->model->where('memberid', $id)->get();
+        $user = $this->model->where('memberid', $id)->first();
         if ($user) {
             $res['success'] = true;
             $res['message'] = $user;

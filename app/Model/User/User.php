@@ -39,4 +39,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var bool timestamps
      */
     public $timestamps = false;
+    
+    public function merchant()
+    {
+        return $this->belongsTo('Merchant');
+    }
+    
 }
