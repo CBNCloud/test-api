@@ -20,3 +20,4 @@ $router->post('/register', 'UserController@register');
 $router->get('/user/{id}', ['middleware' => 'auth', 'uses' => 'User\UserController@get_user']);
 $router->get('/libertyFlavour', ['middleware' => 'auth', 'uses' => 'Liberty\FlavourController@get_flavour']);
 $router->get('/barangs', ['middleware' => 'auth', 'uses' => 'Barang\BarangController@get_barang']);
+$router->get('/icehouse/hypervisors', ['middleware' => 'auth', 'uses' => 'Icehouse\Hypervisors\HypervisorsController@get_hypervisors']);
