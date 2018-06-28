@@ -20,5 +20,18 @@ $router->post('/register', 'UserController@register');
 $router->get('/user/{id}', ['middleware' => 'auth', 'uses' => 'User\UserController@get_user']);
 $router->get('/libertyFlavour', ['middleware' => 'auth', 'uses' => 'Liberty\FlavourController@get_flavour']);
 $router->get('/barangs', ['middleware' => 'auth', 'uses' => 'Barang\BarangController@get_barang']);
+
+// routing icehouse
 $router->get('/icehouse/hypervisors', ['middleware' => 'auth', 'uses' => 'Icehouse\Hypervisors\HypervisorsController@get_hypervisors']);
 $router->get('/icehouse/flavours', ['middleware' => 'auth', 'uses' => 'Icehouse\Flavours\FlavoursController@get_flavours']);
+$router->get('/icehouse/projects', ['middleware' => 'auth', 'uses' => 'Icehouse\Projects\ProjectsController@get_projects']);
+
+
+
+//routing liberty
+
+
+//routing azurestack
+
+
+
