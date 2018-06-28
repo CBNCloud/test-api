@@ -25,6 +25,7 @@ $router->get('/barangs', ['middleware' => 'auth', 'uses' => 'Barang\BarangContro
 $router->get('/icehouse/hypervisors', ['middleware' => 'auth', 'uses' => 'Icehouse\Hypervisors\HypervisorsController@get_hypervisors']);
 $router->get('/icehouse/flavours', ['middleware' => 'auth', 'uses' => 'Icehouse\Flavours\FlavoursController@get_flavours']);
 $router->get('/icehouse/projects', ['middleware' => 'auth', 'uses' => 'Icehouse\Projects\ProjectsController@get_projects']);
+$router->get('/icehouse/images', ['middleware' => 'auth', 'uses' => 'Icehouse\Images\ImagesController@get_images']);
 
 
 
