@@ -1,32 +1,32 @@
 <?php
 
-namespace App\Http\Controllers\Liberty;
+namespace App\Http\Controllers\Icehouse\Flavours;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\liberty\icehouse_flavors;
+use App\Model\Icehouse\Icehouse_flavors;
 
-class FlavourController extends Controller
+class FlavoursController extends Controller
 {
     /**
-     * @var icehouse_flavors
+     * @var Icehouse_hypervisors
      */
     protected $model;
     
     /**
-     * FlavourController constructor.
-     * @param icehouse_flavors $model
+     * HypervisorsController constructor.
+     * @param Icehouse_hypervisors $model
      */
-    public function __construct(icehouse_flavors $model)
+    public function __construct(Icehouse_flavors $model)
     {
         $this->model = $model;
     }
     
     /**
-     * GetFlavour data
      * @param Request $request
+     * @return \Illuminate\Http\Response|\Laravel\Lumen\Http\ResponseFactory
      */
-    public function get_flavour(Request $request)
+    public function get_flavours(Request $request)
     {
         $data = $this->model->all();
         
