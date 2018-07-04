@@ -26,8 +26,8 @@ $router->get('/icehouse/hypervisors', ['middleware' => 'auth', 'uses' => 'Icehou
 $router->get('/icehouse/flavours', ['middleware' => 'auth', 'uses' => 'Icehouse\Flavours\FlavoursController@get_flavours']);
 $router->get('/icehouse/projects', ['middleware' => 'auth', 'uses' => 'Icehouse\Projects\ProjectsController@get_projects']);
 $router->get('/icehouse/images', ['middleware' => 'auth', 'uses' => 'Icehouse\Images\ImagesController@get_images']);
-
-
+$router->get('/icehouse/users', ['middleware' => 'auth', 'uses' => 'Icehouse\Users\UsersController@get_users']);
+$router->get('/icehouse/networks', ['middleware' => 'auth', 'uses' => 'Icehouse\Networks\NetworksController@get_networks']);
 
 //routing liberty
 
