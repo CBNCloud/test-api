@@ -50,6 +50,7 @@ if (!function_exists('floatingips')) {
      */
     function floatingips($environment, $ip)
     {
+        
         $results = DB::select(DB::raw("SELECT " . $environment . "_floatingips.status AS status_ip,
         " . $environment . "_instance.status AS status_instance,
         " . $environment . "_floatingips.fixed_ip_address,
@@ -64,6 +65,37 @@ if (!function_exists('floatingips')) {
         LEFT JOIN " . $environment . "_instance ON " . $environment . "_instance.tenant_id = icehouse_projects.id
         WHERE " . $environment . "_floatingips.floating_ip_address = '$ip' AND " . $environment . "_floatingips.status = 'ACTIVE'
         AND " . $environment . "_instance.addresses LIKE '%$ip%'"));
+        
         return $results;
+        
+        /**
+         * $users = DB::table('icehouse_floatingips')
+         * ->leftJoin('icehouse_projects', 'icehouse_floatingips.tenant_id', '=', 'icehouse_projects.id')
+         * ->leftJoin('icehouse_instance', 'icehouse_instance.tenant_id', '=', 'icehouse_projects.id')
+         * ->get();
+         *
+         * dd($users);
+         **/
     }
+}
+
+
+if (!function_exists('cari_usage_server')) {
+    /**
+     * @param $data
+     * @param $field
+     * @param $value
+     * @return array
+     */
+    function cari_usage_server($data, $field, $value)
+    {
+        $keluar = array();
+        foreach ($data as $key => $product) {
+            if ($product[$field] === $value)
+                $keluar[] = (object) $product;
+        }
+        
+        return $keluar;
+    }
+    
 }

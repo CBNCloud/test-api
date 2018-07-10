@@ -65,10 +65,27 @@ class NetworksController extends Controller
                 $aIPList[]          = $row;
             }
         }
-    
+        
         $res['success'] = 'success';
         $res['total']   = count($aIPList);
         $res['message'] = $aIPList;
+        
+        return response($res);
+    }
+    
+    /**
+     * @param $id
+     * @return \Illuminate\Http\Response|\Laravel\Lumen\Http\ResponseFactory
+     */
+    public function show_networks($id)
+    {
+        
+        $param1   = 'icehouse';
+        $floating = floatingips($param1, $id);
+        
+        $res['success'] = 'success';
+        $res['total']   = count($floating);
+        $res['message'] = $floating;
         
         return response($res);
     }
