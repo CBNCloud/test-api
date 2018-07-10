@@ -30,9 +30,17 @@ class ImagesController extends Controller
     {
         $data = $this->model->all();
         
+        $result = array();
+        foreach ($data as $row) {
+            
+            $row['name'] = isset($row->name) ? $row->name : 'Not Available';
+            $result[]    = $row;
+        }
+        
+        
         $res['success'] = 'success';
-        $res['total']   = $data->count();
-        $res['message'] = $data;
+        $res['total']   = $row->count();
+        $res['message'] = $result;
         
         return response($res);
     }
