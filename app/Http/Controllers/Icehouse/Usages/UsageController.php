@@ -49,7 +49,7 @@ class UsageController extends Controller
         foreach ($data as $row) {
             
             $getproject                   = $this->projects->where('id', $row->tenant_id)->first();
-            $row['customer']              = isset($getproject->name) ? $getproject->name : '';
+            $row['customer']              = isset($getproject->name) ? $getproject->name : ' not available ';
             $row['total_vcpus_usage']     = round($row->total_vcpus_usage);
             $row['total_memory_mb_usage'] = round($row->total_memory_mb_usage);
             $row['total_local_gb_usage']  = round($row->total_local_gb_usage);
